@@ -13,6 +13,7 @@ class Package
     @libs         = toArray(config.libs)
     @paths        = toArray(config.paths)
     @dependencies = toArray(config.dependencies)
+    @excludedDependencies = toArray(config.exlucdedDependencies)
 
   compileModules: ->
     @dependency or= new Dependency(@dependencies)
