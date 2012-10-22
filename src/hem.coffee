@@ -37,6 +37,7 @@ class Hem
     public:       './public'
     paths:        ['./app']
     dependencies: []
+    excludedDependencies: []
     port:         process.env.PORT or argv.port or 9294
     cssPath:      '/application.css'
     jsPath:       '/application.js'
@@ -111,6 +112,7 @@ class Hem
       dependencies: @options.dependencies
       paths: @options.paths
       libs: @options.libs
+      excludedDependencies: @options.excludedDependencies
     )
 
   specsPackage: ->

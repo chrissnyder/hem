@@ -18,6 +18,10 @@ class Package
     @dependency or= new Dependency(@dependencies)
     @stitch       = new Stitch(@paths)
     @modules      = @dependency.resolve().concat(@stitch.resolve())
+    if @excludedDependencies.length isnt 0
+      @modules = @modules.filter (module) =>
+        moduleName = module.id.split('/')[0]
+        not (moduleName in @excludedDependencies)
     stitch(identifier: @identifier, modules: @modules)
     
   compileLibs: ->
