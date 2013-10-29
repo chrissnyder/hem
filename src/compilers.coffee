@@ -56,7 +56,7 @@ try
     result = ''
     stylus(content)
       .include(dirname(path))
-      .set('include-css', true)
+      .set('include css', true)
       .render((err, css) -> 
         throw err if err
         result = css
